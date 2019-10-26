@@ -1,0 +1,37 @@
+Connect AWS CLI to WIN CMD
+1. Install Python-- Install BY Path
+2. C:/> pip install awscli
+3. C:/> aws configure
+AWS Access Key ID [****************6YN7]: AKIA2S7XT5U5JLU23MW7
+AWS Secret Access Key [****************L7R/]: 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
+Default region name [us-east-1]:
+Default output format [None]:
+
+4. C:\Users\Ayush Kumar>aws s3 ls  : List S3 Bucket
+2019-10-26 12:51:59 testbuck95
+2019-10-26 13:07:11 testbuck96
+5. C:\>aws s3 ls s3://testbuck95 --recursive   : Show the contents of testbuck95
+
+6. aws s3 rb s3://testbuck95   : Remove Bucket testbuck95
+7. aws s3 cp 1.txt s3://testbuck96   : Copy 1.txt from local system to testbuck96 buket. 
+8.aws s3 cp data s3://testbuck96 --recursive : Copy locatl folder to s3 bucket
+upload: data/parameters.txt to s3://testbuck96/parameters.txt
+upload: data/common.txt to s3://testbuck96/common.txt
+
+9.aws s3 cp data s3://testbuck96/data --recursive 
+upload: data/parameters.txt to s3://testbuck96/data/parameters.txt
+upload: data/common.txt to s3://testbuck96/data/common.txt
+
+10. aws s3 cp s3://testbuck96/getdata.php : Donwload a specific file from an S3 bucket. 
+download: s3://testbuck96/getdata.php to ./getdata.php
+
+11. aws s3 mv source.json s3://testbuck96  : Move a File from local to S3 bucket.
+move: ./source.json to s3://testbuck96/source.json
+
+12. aws s3 mv s3://testbuck96 /source.json s3://backup-bucket       : Move the file from teetbuck95 to backup-bucket
+move: s3://testbuck96 /source.json to s3://backup-bucket/source.json
+
+
+
+
+
